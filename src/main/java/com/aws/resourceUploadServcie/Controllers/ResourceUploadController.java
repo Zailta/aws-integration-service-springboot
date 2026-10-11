@@ -38,6 +38,7 @@ public class ResourceUploadController {
 	@GetMapping
 	public String healthCheckUp() {
 		return "AWS Ingest Service is running";
+		
 	}
 
 }
