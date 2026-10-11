@@ -15,7 +15,7 @@ public class S3Config {
 	 S3Client getS3Client() {
 		System.out.println("S3Client Bean Creation Completed Successfully");
 		return S3Client.builder().region(Region.AP_SOUTHEAST_2)
-				.credentialsProvider(StaticCredentialsProvider.create(AwsBasicCredentials.create("AKIAVEL4NLLMJYDTXQUE", "XIstar7J3JZAAVyTy8d8UQ43t3g7dgYxTtXl7mHZ"))).build();
+				.credentialsProvider(StaticCredentialsProvider.create(AwsBasicCredentials.create("", ""))).build();
 
 	}
 
