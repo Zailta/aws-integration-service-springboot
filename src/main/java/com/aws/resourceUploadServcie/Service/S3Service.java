@@ -46,5 +46,6 @@ public class S3Service {
 		
 		return objectAsBytes.asByteArray();
 	}
+	
 
 }
