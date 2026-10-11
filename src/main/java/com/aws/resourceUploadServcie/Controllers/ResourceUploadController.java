@@ -2,6 +2,7 @@ package com.aws.resourceUploadServcie.Controllers;
 
 import java.io.IOException;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,5 +41,15 @@ public class ResourceUploadController {
 		return "AWS Ingest Service is running";
 		
 	}
+	
+	@GetMapping(value = "aws-doc-retreive")
+	public ResponseEntity<byte[]> getS3documentForDownload(@RequestParam String fileName) {
+		byte[] s3documentForDownloadDoc = s3Service.getS3documentForDownload(fileName);
+		return ResponseEntity.ok()
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; fileName="+fileName)
+				.body(s3documentForDownloadDoc);
+		
+	}
+	
 
 }
